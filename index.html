@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexum Suite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./img/nexum-mini.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="particle-canvas"></canvas>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="hero-nav" id="hero-nav">
+        <nav class="nav-side nav-left">
+          <a href="#icp" class="nav-link nav-reveal-item" style="--seq: 0;">ICP</a>
+          <a href="#solucoes" class="nav-link nav-reveal-item" style="--seq: 1;">Plataforma</a>
+          <a href="#funcoes" class="nav-link nav-reveal-item" style="--seq: 2;">Funcionalidades</a>
+          <a href="#comparativo" class="nav-link nav-reveal-item" style="--seq: 3;">Comparativo</a>
+        </nav>
+
+        <div class="brand nav-center nav-reveal-item" style="--seq: 5;">
+          <img src="./img/nexum.png" alt="Nexum" class="brand-logo" />
+        </div>
+
+        <nav class="nav-side nav-right">
+          <a href="#parceiros" class="nav-link nav-reveal-item" style="--seq: 4;">Parceiros</a>
+          <a href="#integracoes" class="nav-link nav-reveal-item" style="--seq: 5;">Integrações</a>
+          <a href="#contato" class="nav-link nav-reveal-item" style="--seq: 6;">Suporte</a>
+          <div class="nav-lang nav-reveal-item" style="--seq: 7;">
+            <select class="lang-select" aria-label="Selecionar idioma" onchange="window.location.href=this.value">
+              <option value="./index.html" selected>PT</option>
+              <option value="./ES/index.html">ES</option>
+            </select>
+          </div>
+          <button class="btn btn-primary btn-sm nav-cta nav-reveal-item" style="--seq: 8;">Cadastrar-se</button>
+        </nav>
+        <button class="mobile-nav-toggle" type="button" aria-label="Abrir menu" aria-controls="mobile-nav-panel" aria-expanded="false">
+          Menu
+        </button>
+      </div>
+      <aside class="mobile-nav-panel" id="mobile-nav-panel" aria-hidden="true">
+        <div class="mobile-nav-panel-head">
+          <img src="./img/nexum.png" alt="Nexum" class="mobile-nav-logo" />
+          <button class="mobile-nav-close" type="button" aria-label="Fechar menu">Fechar</button>
+        </div>
+        <nav class="mobile-nav-links" aria-label="Menu mobile">
+          <a href="#icp" style="--mseq:0">ICP</a>
+          <a href="#solucoes" style="--mseq:1">Plataforma</a>
+          <a href="#funcoes" style="--mseq:2">Funcionalidades</a>
+          <a href="#comparativo" style="--mseq:3">Comparativo</a>
+          <a href="#parceiros" style="--mseq:4">Parceiros</a>
+          <a href="#integracoes" style="--mseq:5">Integrações</a>
+          <a href="#contato" style="--mseq:6">Suporte</a>
+        </nav>
+      </aside>
+    </header>
+
+    <main>
+      <section class="hero-ref reveal">
+        <div class="hero-dark">
+          <div class="hero-dark-stage">
+            <div class="hero-dark-copy">
+              <h2 class="hero-dark-title">
+                <span class="hero-dark-top">
+                <span class="hero-dark-words" aria-label="Fluxo real com">
+                  <span class="hero-dark-word">FLUXO</span>
+                  <span class="hero-dark-word">REAL</span>
+                  <span class="hero-dark-word">COM</span>
+                </span>
+                <span class="hero-dark-actions">
+                  <button class="cssbuttons-io-button" type="button" data-open-demo-modal>
+                    FILA PARA DEMO
+                    <span class="icon">
+                      <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path
+                          d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                          fill="currentColor"
+                        ></path>
+                      </svg>
+                    </span>
+                  </button>
+                </span>
+              </span>
+                <span class="hero-dark-line">
+                  <span class="hero-dark-logo-chip">
+                    <img src="./img/nexum.png" alt="Nexum" />
+                  </span>
+                  <span class="hero-dark-line-text">RESULTADO REAL</span>
+                </span>
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-white">
+          <div class="hero-white-left">
+            <h1 class="title-reveal">
+              <span class="title-reveal__text">
+                CONTROLE TOTAL<br />
+                DA OPERACAO DIGITAL
+              </span>
+              <span class="title-reveal__bar" aria-hidden="true"></span>
+            </h1>
+          </div>
+
+          <div class="hero-white-right">
+            <article class="hero-stat tilt-card">
+              <p class="hero-kicker">CATALOGO DE INTEGRAÇÕES</p>
+              <p class="hero-stat-value" data-counter="35">0</p>
+              <p class="hero-stat-sub">Integrações prontas para ativacao</p>
+              <p class="hero-stat-copy">Conecte canais de ads, social, marketplaces e analytics.</p>
+            </article>
+            <article class="hero-stat tilt-card">
+              <p class="hero-kicker">NEXUM SUITE</p>
+              <p class="hero-stat-value" data-counter="9">0</p>
+              <p class="hero-stat-sub">Modulos operacionais ativos</p>
+              <p class="hero-stat-copy">Dashboard, Clientes, Integrações, Relatorios e IA Flow.</p>
+            </article>
+            <article class="hero-stat tilt-card">
+              <p class="hero-kicker">VISÃO</p>
+              <p class="hero-stat-value" data-counter="360">0</p>
+              <p class="hero-stat-sub">Graus de controle da operacao</p>
+              <p class="hero-stat-copy">Dados, execucao e performance no mesmo fluxo.</p>
+            </article>
+            <article class="hero-stat hero-stat-pay tilt-card">
+              <p class="hero-kicker">PAY TO USE</p>
+              <p class="hero-stat-value">Pay to use</p>
+              <p class="hero-stat-sub">Pague apenas pelo que ativar</p>
+              <p class="hero-stat-copy">Modelo flexivel com custo sob demanda para escalar sua operacao no ritmo certo.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <div class="section-break-gradient" aria-hidden="true"></div>
+
+      <section class="icp-section reveal" id="icp" aria-labelledby="icp-title">
+        <div class="icp-head">
+          <span class="icp-chip">PARA QUEM E</span>
+          <h2 id="icp-title">
+            <span class="icp-title-focus">Nexum Suite</span>
+            para operacoes que precisam
+            <span class="icp-title-accent">escalar com controle</span>
+          </h2>
+          <p>Modelos de uso alinhados ao momento de cada negocio digital.</p>
+          <div class="icp-proof" aria-label="Destaques de capacidade Nexum">
+            <span>+35 integracoes nativas</span>
+            <span>Ativacao modular</span>
+            <span>Visao operacional 360</span>
+          </div>
+        </div>
+        <div class="icp-grid">
+          <article class="icp-card tilt-card">
+            <p class="icp-card-tag">TRAFEGO PAGO E ORGANICO</p>
+            <h3>Operacoes que precisam unir prospeccao, conteudo e conversao</h3>
+            <p>Gerencie campanhas pagas e canais organicos em um unico fluxo com visao completa de custo, alcance e retorno.</p>
+            <ul>
+              <li>Planejamento integrado de canais</li>
+              <li>Acompanhamento de CAC, ROAS e SEO</li>
+              <li>Leitura de performance por proposta</li>
+            </ul>
+          </article>
+          <article class="icp-card tilt-card">
+            <p class="icp-card-tag">AUTOMACOES COM IA</p>
+            <h3>Times que precisam escalar a execucao com inteligencia</h3>
+            <p>Ative automacoes com IA para acelerar tarefas repetitivas, gerar insights e apoiar decisoes em tempo real.</p>
+            <ul>
+              <li>Fluxos automatizados por gatilho</li>
+              <li>Recomendacoes de otimizacao por IA</li>
+              <li>Alertas operacionais com prioridade</li>
+            </ul>
+          </article>
+          <article class="icp-card tilt-card">
+            <p class="icp-card-tag">AGENCIAS E SQUADS</p>
+            <h3>Gestao multioperacao com padrao, governanca e escala</h3>
+            <p>Organize clientes, campanhas e rotinas com padrao de execucao para squads internos e operacoes de agencia.</p>
+            <ul>
+              <li>Paineis por cliente, time e carteira</li>
+              <li>Playbooks reutilizaveis de execucao</li>
+              <li>Controle de entrega e produtividade</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="app-process reveal" id="solucoes">
+        <div class="app-process-head">
+          <span class="process-chip">NEXUM APPLICATION FLOW</span>
+          <h2>Fluxo simples, execucao completa.</h2>
+          <p>
+            Do setup inicial ao acompanhamento de performance, o Nexum organiza sua operacao em
+            etapas claras para acelerar decisao e resultado.
+          </p>
+        </div>
+
+        <div class="process-mosaic">
+          <article class="mosaic-card mosaic-a tilt-card">
+            <h3>Integracao em tempo real</h3>
+            <div class="signal-flow" aria-label="Fluxo sincronizado para o nucleo Nexum">
+              <div class="signal-rail" aria-hidden="true">
+                <span class="signal-pulse left"></span>
+                <span class="signal-pulse right"></span>
+              </div>
+
+              <div class="signal-box signal-left">
+                <div class="signal-logo">
+                  <span>IA</span>
+                </div>
+                <p class="signal-label">IA</p>
+              </div>
+
+              <div class="signal-box signal-left">
+                <div class="signal-logo">
+                  <span>AN</span>
+                </div>
+                <p class="signal-label">Analytics</p>
+              </div>
+
+              <div class="signal-box signal-center">
+                <img src="./img/nexum.png" alt="Nexum" />
+              </div>
+
+              <div class="signal-box signal-right">
+                <div class="signal-logo">
+                  <span>MS</span>
+                </div>
+                <p class="signal-label">Midias Sociais</p>
+              </div>
+
+              <div class="signal-box signal-right">
+                <div class="signal-logo">
+                  <span>TP</span>
+                </div>
+                <p class="signal-label">Trafego Pago</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="mosaic-card mosaic-b tilt-card">
+            <h3>Sem Sabooor Plataforma de marketing</h3>
+            <div class="comparison-board" aria-label="Comparacao de valor da plataforma">
+              <div class="comparison-col">
+                <div class="comparison-dot comparison-dot-orange" aria-hidden="true"></div>
+                <div class="comparison-notes">
+                  <p class="comparison-down comparison-red">↑ Custo Menor</p>
+                  <p class="comparison-down comparison-red">↓ Menos ferramentas</p>
+                </div>
+              </div>
+
+              <div class="comparison-col comparison-col-main">
+                <div class="comparison-dot comparison-dot-nexum" aria-hidden="true">
+                  <img src="./img/nexum.png" alt="Nexum" />
+                </div>
+                <div class="comparison-notes">
+                  <p class="comparison-down comparison-green">↑ Mais ferramentas</p>
+                  <p class="comparison-down comparison-green">↓ Custo Menor</p>
+                </div>
+              </div>
+
+              <div class="comparison-col">
+                <div class="comparison-dot comparison-dot-blue" aria-hidden="true"></div>
+                <div class="comparison-notes">
+                  <p class="comparison-note-plain">
+                    se o primeiro lugar ja apanha comparar com o segundo ja seria desleal
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="mosaic-card mosaic-c tilt-card">
+            <h3>Campanhas e Postagens</h3>
+            <p>Crie campanhas e postagens dentro a plataforma de forma programada e acertiva</p>
+            <p class="text2-card">realize testes A e B economizando tempo,desgastes e economizando com gastos desnecessarios</p>
+            <img class="img-analise" src="./img/carrinho.png" alt="" srcset="">
+          </article>
+          <article class="mosaic-card mosaic-d tilt-card">
+            <h3>Analise profunda</h3>
+            <p>Crie Dashboards completos utilizando analises profundas de cada campanha e postagens</p>
+            <p class="text2-card">Receba inshits poderosos sobre cada postagem e campanha impactando diretamente sua tomada de desição</p>
+            <img class="img-analise" src="./img/analise.png" alt="" srcset="">
+          </article>
+          <article class="mosaic-card mosaic-e tilt-card">
+            <h3>Getways e E-commerces</h3>
+            <p>Integrações com segurança com getways de pagamentos e E-commerces para você passar para o proximo nivel</p>
+            <p class="text2-card">Integre sua infraestrutura completa de marketing em um só lugar com um valor acessivel modelo pay-to-use que cabe no seu bolso</p>
+            <img class="img-analise" src="./img/megafone.png" alt="" srcset="">
+          </article>
+
+        </div>
+      </section>
+
+      <section class="features-parallax-section reveal" id="funcoes" aria-labelledby="features-parallax-title">
+        <div class="features-scroll-space">
+          <div class="features-sticky-shell">
+            <div class="features-parallax-head">
+              <h2 id="features-parallax-title">Funcionalidades</h2>
+            </div>
+
+            <div class="features-parallax-layout">
+              <div class="features-media-column">
+                <div class="feature-flip-card" id="feature-flip-card" aria-hidden="true">
+                  <div class="feature-flip-inner" id="feature-flip-inner">
+                    <div class="feature-flip-face feature-flip-front">
+                      <img id="feature-front-img" src="./imgs-pages/img11.png" alt="Funcionalidade Nexum" />
+                    </div>
+                    <div class="feature-flip-face feature-flip-back">
+                      <img id="feature-back-img" src="./img/carrinho.png" alt="Funcionalidade Nexum alternativa" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="features-text-column">
+                <p class="features-step-kicker" id="feature-step-kicker">MODULO</p>
+                <h3 id="feature-step-title">Controle operacional em um unico painel</h3>
+                <p class="features-step-copy" id="feature-step-copy"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="comparison-objective-section reveal" id="comparativo" aria-labelledby="comparativo-title">
+        <div class="comparison-objective-head">
+          <span class="comparison-objective-chip">COMPARATIVO OBJETIVO</span>
+          <h2 id="comparativo-title">Nexum vs alternativas</h2>
+          <p>Comparacao direta em criterios que impactam custo, velocidade e qualidade da operacao.</p>
+        </div>
+
+        <div class="comparison-table-wrap tilt-card">
+          <table class="comparison-table" aria-label="Tabela comparativa entre Nexum e alternativas">
+            <thead>
+              <tr>
+                <th>Critério</th>
+                <th>Nexum Suite</th>
+                <th>Stacks sociais</th>
+                <th>Stacks de relatorios</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Modelo de custo</td>
+                <td>Pay-to-use por modulo</td>
+                <td>Cobram por perfil e surpresa vem no limite</td>
+                <td>Plano cresce conforme o dashboard cresce</td>
+              </tr>
+              <tr>
+                <td>Tempo de setup</td>
+                <td>Rapido com conectores nativos</td>
+                <td>Rapido para postar, lento para unificar operacao</td>
+                <td>Rapido para relatorio, limitado para execucao</td>
+              </tr>
+              <tr>
+                <td>Visao operacional</td>
+                <td>Painel unificado por operacao</td>
+                <td>Forte em social, fraco fora dele</td>
+                <td>Forte em report, raso em acao</td>
+              </tr>
+              <tr>
+                <td>Automacao e IA</td>
+                <td>Fluxos praticos com IA aplicada</td>
+                <td>Automacao parcial e dependente de plugins</td>
+                <td>Mais analise do que automacao real</td>
+              </tr>
+              <tr>
+                <td>Escala e governanca</td>
+                <td>Estruturado para squads e agencias</td>
+                <td>Escala com retrabalho entre ferramentas</td>
+                <td>Escala em relatorio, nao em operacao</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="partners-section reveal" id="parceiros" aria-labelledby="partners-title">
+        <div class="partners-head">
+          <span class="partners-chip">ECOSSISTEMA NEXUM</span>
+          <h2 id="partners-title">Conheca nossos parceiros</h2>
+          <p>Empresas que impulsionam operacoes digitais de alta performance junto com a Nexum.</p>
+        </div>
+
+        <div class="partners-cloud" aria-label="Logos de parceiros Nexum">
+          <article class="partner-item tilt-card" data-partner style="--partner-delay: 0ms; --px: 14%; --py: 20%; --float-duration: 7.2s;">
+            <span class="partner-site-popover">querojadigital.com.br</span>
+            <span class="partner-shadow" aria-hidden="true"></span>
+            <div class="partner-badge"><img src="./imgs-parceiros/2.png" alt="Shopify" /></div>
+          </article>
+
+          <article class="partner-item tilt-card" data-partner style="--partner-delay: 120ms; --px: 32%; --py: 18%; --float-duration: 6.6s;">
+            <span class="partner-site-popover">ads.google.com</span>
+            <span class="partner-shadow" aria-hidden="true"></span>
+            <div class="partner-badge"><img src="./imgs-parceiros/1.jpeg" alt="Google Ads" /></div>
+          </article>
+
+          <article class="partner-item tilt-card" data-partner style="--partner-delay: 220ms; --px: 50%; --py: 20%; --float-duration: 7.9s;">
+            <span class="partner-site-popover">safiradesign.com.br</span>
+            <span class="partner-shadow" aria-hidden="true"></span>
+            <div class="partner-badge"><img src="./imgs-parceiros/3.png" alt="Meta" /></div>
+          </article>
+
+          <article class="partner-item partner-empty tilt-card" data-partner style="--partner-delay: 320ms; --px: 68%; --py: 18%; --float-duration: 7.1s;">
+            <span class="partner-shadow" aria-hidden="true"></span>
+            <div class="partner-badge"><span>VAGO</span></div>
+          </article>
+
+          <article class="partner-item partner-empty tilt-card" data-partner style="--partner-delay: 90ms; --px: 86%; --py: 22%; --float-duration: 7.6s;">
+            <span class="partner-shadow" aria-hidden="true"></span>
+            <div class="partner-badge"><span>VAGO</span></div>
+          </article>
+
+          <article class="partner-item partner-empty tilt-card" data-partner style="--partner-delay: 190ms; --px: 20%; --py: 52%; --float-duration: 6.9s;">
+            <span class="partner-shadow" aria-hidden="true"></span>
+            <div class="partner-badge"><span>VAGO</span></div>
+          </article>
+
+          <article class="partner-item partner-empty tilt-card" data-partner style="--partner-delay: 280ms; --px: 40%; --py: 52%; --float-duration: 8s;">
+            <span class="partner-shadow" aria-hidden="true"></span>
+            <div class="partner-badge"><span>VAGO</span></div>
+          </article>
+
+          <article class="partner-item partner-empty tilt-card" data-partner style="--partner-delay: 360ms; --px: 60%; --py: 52%; --float-duration: 7.3s;">
+            <span class="partner-shadow" aria-hidden="true"></span>
+            <div class="partner-badge"><span>VAGO</span></div>
+          </article>
+
+          <article class="partner-item partner-empty tilt-card" data-partner style="--partner-delay: 430ms; --px: 80%; --py: 52%; --float-duration: 6.8s;">
+            <span class="partner-shadow" aria-hidden="true"></span>
+            <div class="partner-badge"><span>VAGO</span></div>
+          </article>
+
+          <article class="partner-item partner-empty tilt-card" data-partner style="--partner-delay: 510ms; --px: 50%; --py: 82%; --float-duration: 7.4s;">
+            <span class="partner-shadow" aria-hidden="true"></span>
+            <div class="partner-badge"><span>VAGO</span></div>
+          </article>
+
+        </div>
+      </section>
+
+
+      <section class="integrations-section" id="integracoes">
+        <div class="integrations-head">
+          <span class="integrations-chip">CATALOGO COMPLETO</span>
+          <h2>Integrações Nexum Suite</h2>
+          <p>Conectores nativos para marketing, ecommerce, pagamentos e analytics.</p>
+        </div>
+        <div class="integrations-grid" aria-label="Lista completa de integracoes">
+            <span class="logo-chip "><img src="./icons-integracoes/appmax.svg" alt="Appmax" /></span>
+            <span class="logo-chip "><img src="./icons-integracoes/asaas.png" alt="Asaas" /></span>
+            <span class="logo-chip logo-invert"><img src="./icons-integracoes/bluesky-ads.png" alt="Bluesky Ads" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/bluesky.png" alt="Bluesky" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/braip.svg" alt="Braip" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/cakto.jpg" alt="Cakto" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/eduzz.png" alt="Eduzz" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/facebook.png" alt="Facebook" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/ga4.png" alt="GA4" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/google-ads.png" alt="Google Ads" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/hotmart-icon.png" alt="Hotmart" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/instagram.png" alt="Instagram" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/kiwify.jpeg" alt="Kiwify" /></span>
+            <span class="logo-chip logo-invert"><img src="./icons-integracoes/linkedin-ads.png" alt="LinkedIn Ads" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/linkedin.png" alt="LinkedIn" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/mercado-livre.png" alt="Mercado Livre" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/mercado-pago.png" alt="Mercado Pago" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/meta.png" alt="Meta" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/monetizze.svg" alt="Monetizze" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/Nivellus-mini.png" alt="Nivellus" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/nuvemshop.png" alt="Nuvemshop" /></span>
+            <span class="logo-chip logo-invert"><img src="./icons-integracoes/pinterest-ads.png" alt="Pinterest Ads" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/pinterest.png" alt="Pinterest" /></span>
+            <span class="logo-chip logo-invert"><img src="./icons-integracoes/reddit-ads.png" alt="Reddit Ads" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/reddit.png" alt="Reddit" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/shopify.png" alt="Shopify" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/snapchat.png" alt="Snapchat" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/spotify.png" alt="Spotify" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/threads.png" alt="Threads" /></span>
+            <span class="logo-chip logo-invert"><img src="./icons-integracoes/threadsads.png" alt="Threads Ads" /></span>
+            <span class="logo-chip logo-invert"><img src="./icons-integracoes/tiktok.png" alt="TikTok" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/tiktokads.png" alt="TikTok Ads" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/youtube-ads.png" alt="YouTube Ads" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/youtube.png" alt="YouTube" /></span>
+            <span class="logo-chip"><img src="./icons-integracoes/ytshorts.png" alt="YouTube Shorts" /></span>
+        </div>
+      </section>
+
+      <section class="faq-section reveal" id="faq" aria-labelledby="faq-title">
+
+        <div class="faq-head">
+          <span class="faq-chip">FAQ</span>
+          <h2 id="faq-title">Perguntas frequentes</h2>
+          <p>Respostas diretas para as duvidas mais comuns antes de entrar na Nexum Suite.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item tilt-card">
+            <summary>Quanto tempo leva para configurar as integracoes?</summary>
+            <p>Em minutos voce conecta os principais canais e comeca a centralizar sua operacao.</p>
+          </details>
+          <details class="faq-item tilt-card">
+            <summary>Consigo usar somente alguns modulos?</summary>
+            <p>Sim. O modelo da Nexum permite ativar apenas os modulos e conectores que fizerem sentido para sua fase.</p>
+          </details>
+          <details class="faq-item tilt-card">
+            <summary>A plataforma atende agencia e operacao interna?</summary>
+            <p>Sim. A estrutura suporta ambos os cenarios, com visao unificada para campanhas, clientes e relatorios.</p>
+          </details>
+          <details class="faq-item tilt-card">
+            <summary>Vocês oferecem suporte no onboarding?</summary>
+            <p>Sim. O time acompanha os primeiros passos para garantir setup rapido e adocao da rotina na plataforma.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="single-cta-section" id="contato">
+        <div>
+          <h2>Pronto para escalar?</h2>
+          <p>Ative a Nexum Suite e centralize toda a sua operacao em um unico fluxo inteligente.</p>
+          <button class="cssbuttons-io-button cssbuttons2" type="button" data-open-demo-modal>
+            FILA PARA DEMONSTRAÇÃO
+            <span class="icon">
+              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <div class="demo-modal" id="demo-modal" aria-hidden="true">
+        <button class="demo-modal-backdrop" type="button" data-close-demo-modal aria-label="Fechar modal"></button>
+        <div class="demo-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title">
+          <button class="demo-modal-close" type="button" data-close-demo-modal aria-label="Fechar modal">Fechar</button>
+          <h3 id="demo-modal-title">Marcar avaliação/demonstração</h3>
+          <form class="demo-form" action="https://formsubmit.co/nexumsuite@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nova solicitacao de avaliacao/demonstracao - Nexum" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="./index.html#contato" />
+
+            <label for="demo-name">Nome</label>
+            <input id="demo-name" name="Nome" type="text" required />
+
+            <label for="demo-email">Email</label>
+            <input id="demo-email" name="Email" type="email" required />
+
+            <label for="demo-phone">Numero</label>
+            <input id="demo-phone" name="Numero" type="tel" required />
+
+            <button class="demo-submit" type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+      <section class="countdown-neon-section reveal" id="countdown" aria-labelledby="countdown-title">
+        <div class="countdown-neon-wrap">
+          <h2 id="countdown-title" class="sr-only">Contador regressivo para 31/03/2026 as 15:00</h2>
+          <div class="countdown-neon-grid" aria-live="polite" aria-label="Contador regressivo">
+            <article class="countdown-neon-item">
+              <span class="countdown-neon-value" id="countdown-days">00</span>
+              <span class="countdown-neon-label">DIAS</span>
+            </article>
+            <article class="countdown-neon-item">
+              <span class="countdown-neon-value" id="countdown-hours">00</span>
+              <span class="countdown-neon-label">HORAS</span>
+            </article>
+            <article class="countdown-neon-item">
+              <span class="countdown-neon-value" id="countdown-minutes">00</span>
+              <span class="countdown-neon-label">MINUTOS</span>
+            </article>
+            <article class="countdown-neon-item">
+              <span class="countdown-neon-value" id="countdown-seconds">00</span>
+              <span class="countdown-neon-label">SEGUNDOS</span>
+            </article>
+          </div>
+          <p class="countdown-note sr-only" id="countdown-note">Horario alvo: 31/03/2026 as 15:00 (UTC-3).</p>
+        </div>
+      </section>
+
+      <footer class="site-footer reveal" aria-label="Rodape do site">
+        <div class="site-footer-grid">
+          <section class="site-footer-brand">
+            <img src="./img/nexum.png" alt="Nexum" class="site-footer-logo" />
+            <p>Centralize marketing, ecommerce e dados em uma unica operacao orientada por performance.</p>
+          </section>
+
+          <section>
+            <h3>Produto</h3>
+            <a href="#icp">Para quem e</a>
+            <a href="#solucoes">Plataforma</a>
+            <a href="#funcoes">Funcionalidades</a>
+            <a href="#comparativo">Comparativo</a>
+            <a href="#parceiros">Parceiros</a>
+            <a href="#integracoes">Integrações</a>
+            <a href="#faq">FAQ</a>
+          </section>
+
+          <section>
+            <h3>Empresa</h3>
+            <a href="#contato">Falar com time</a>
+            <a href="#contato">Fila para demo</a>
+            <a href="#contato">Suporte</a>
+            <a href="#solucoes">Como funciona</a>
+          </section>
+
+          <section>
+            <h3>Contato</h3>
+            <a href="mailto:nexumsuite@gmail.com">nexumsuite@gmail.com</a>
+            <span class="site-footer-note">Atendimento: seg a sex, 9h as 18h</span>
+          </section>
+        </div>
+
+        <div class="site-footer-bottom">
+          <span>© 2026 Nexum Suite. Todos os direitos reservados.</span>
+          <div class="site-footer-legal">
+            <a href="#faq">Termos</a>
+            <a href="#faq">Privacidade</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
